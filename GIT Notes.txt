@@ -28,12 +28,115 @@ To see what we have configured, we can use below command:
 
 git config --global --list
 
-Git clone command creates a branch master here in local and also adds a direct reference to origin/master in the remote repository
+Git clone command creates a branch 'master' here in local and also adds a direct reference to origin/master in the remote repository
 that we are trying to clone.
 
 If there exists a local repository and you want to add a remote repository to this local one, you can issue below command..
 git remote add <the_Remote_branch_name> <the_Remote_repository_url>
 
 
+So as we already discussed, there are 3 stages to the GIT, one the working directory, staging area, commited stage.
+Now by defaul t when we initiate a git repository, all files in the folder are not tracked, we can track a file/folder by
+issuing command git add <file_name/folder_name>
+
+Now, when we make any changes to the file that git is tracking, we can then issue git add command again, to move it to staging area.
+If a new file is introcued into the project, then by default git doesn't track it, issue git add again then again,
+its all changes will be added to staging area and is also curently under tracking.
+
+To add a default code eitor for git, we can use
+git config --core.editor "code"
+
+There are 3 ways to create git repositories:
+1. No source code yet.
+2. There exists a local source code.
+3. Cloning a GitHub repository or any online repository.
+
+In both 1 and 2 options:.. you issue git init command and if you want to add a remote repository, you do a git remote add <remote_branch_name> <remote_url>
+In 3rd option.. You can clone some one else repository or your own repository.
+You can actually fork in github, some one else repository and it will be copied into ypur own account.
+Now you have a exact copy of that repository.
+You can clone that repository in local and then, that repository will be copied to your local.
+A default master 'branch' is created which points to original repository code in the local.
+The remote repository main branch is called origin and there exists an inherent connection to this origin branch in the remote
+repository from the local git store.
+
+Now, whenver changes are made in the local reposiory, we can push those changes by git push origin master, and those will be 
+published to remote repository.
+
+But the best practice is always to pull the chanegs first from remote repository to your local, so that any changes whover commited to that remote 
+reposiory will be written down to your local.
+There are 2 avantages by this, you can see if there are any conflicts with remote repository and second one is,
+after pull, your changes are simple insertions, in the remote repository.
+
+After you push, the changes to the remote repository it also lists the starting commit point to ending commit point in your local repository
+that has been published to remote repository.
+
+WE can see the git settings .gitconfig file as well.
+
+The git files that are being tracked are also called as files that are added to git index.
+ALso, we can combine both commit and add in single comand by, 
+git commit -am "commit_message".
+
+This will add all changes in files that are being tracked to staging area and then staging area to commit stage.
+
+Allright, back to basics..
+So if you just add changes to some tracked files, then they will be shown as files that are waiting to be staged,
+with issue of git add, they are moved to staging area.
+Only those changes present in git staging area are moved to commited stage, when git commit is issued.
+So if you want to commit changes you definitely have to move tha changes to staging area, or else
+issue a git commit -am, in the sense, stage and commit as well.
+Even for a same file you did a change 1, then staged it, now you did a 'change2' to that file but not staged it yet.
+A commit will move only 'change1' to the commited zone.
+So git well know the changes that are in working area, and that are in staged area.
+
+Mention a folder for git add and it will recursively add all the subfolders and subfiles present in it.
+
+Git reset:
+If you want to unstage a file or folder, then you issue the following command.
+git reset HEAD <file-name/folder-name>
+Saying essentially the current branch be reset or get rid of any staged changes of that particular file or folder.
+
+If after unstaging you still want to get rid of all the changes present in that file in that working directory,
+you cna basically issue a checkout command.
+git checkout -- <file-name>
+Thats it the file is downloaded from the commited area and is clean now.
+Discards all changes or essentially replaces that version of file present in commited area.
+
+Moving files:
+Git mv level1.txt level-1.txt
+renames level1.txt file to level-1.txt
+
+Moving whether in linux or git, into smae folder renames it essentially.
+If you manually rename it, git thinks you deleted a file and new file has been added.
+This new file is untracked as expected.
+You can fix this by git add -A
+And the GIT index automatically updates to reflex the working tree index and discovers that files has been renamed (magicaly!).
+or you can 
+git add the new file and issue command
+git add -u
+this also makes git rediscover that files has been renamed.
+You can also move one folder to another folder, git doesnt have any issue with that. It discovers it correctly.
+
+Deleting files:
+
+Git rm <file-name>
+
+simply deletes the file from the index and as well as working tree.
+if you reset it, 
+git reset head hipster.txt
+hipster.txt is again tracked, but will not be coming backed to working tree.
+For that,
+git checkout -- hipster.txt, after reset command.
+
+If you manually remove the file,
+rm hipster.txt
+git detects that file is detected,
+to stage this changes, or to add/incorporate these changes,
+git add -A.
+Same for directory removal.
+
+
+If you add a new file, git will show a file has been newly added and currently not being tracked.
+If you delete that file, git ignores whatever, becuase it is never tracked.
 
 
