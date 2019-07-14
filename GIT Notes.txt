@@ -1,0 +1,39 @@
+There are 2 Source Control Systems:
+Centralised and Decentralised.
+Centralised, require a connection to central server for all the soruce control operations to be performed.
+Decentralised: does allow all operations to be performed on local. And the n whenever you can connect to
+server, you can sync all these things.
+
+Key concepts:
+Repository: IT contails all original files of the project that we want to backup and also the history of
+changes that we did to the project.
+3 Stages of GIT:
+Working area: Where we work on the changes to be made to the project.
+Staging area: Place where we queue up all of our changes that are part of
+ the next commit without affect git change history.
+Repository/Commit/History: Once commited all our changes, these become a permanent member of the
+change part of the repository. Technically these all stored in the .git folder in the same Place
+as of working area.
+MAster Branch: This is the main branch where all the original project and all the commited changed
+to the original repository reside. This is a default one created by GIT when we first opt it 
+for version controlling by GIT.
+
+Setting up GIT:
+We need to configure our name and email address in GIT, before we can commit any to local repository.
+
+git config --global user.name "durga prasad"
+git config --global user.email "durgaprasadmurikipudi@gmail.com"
+
+To see what we have configured, we can use below command:
+
+git config --global --list
+
+Git clone command creates a branch master here in local and also adds a direct reference to origin/master in the remote repository
+that we are trying to clone.
+
+If there exists a local repository and you want to add a remote repository to this local one, you can issue below command..
+git remote add <the_Remote_branch_name> <the_Remote_repository_url>
+
+
+
+
