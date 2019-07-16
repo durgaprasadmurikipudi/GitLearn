@@ -139,4 +139,45 @@ Same for directory removal.
 If you add a new file, git will show a file has been newly added and currently not being tracked.
 If you delete that file, git ignores whatever, becuase it is never tracked.
 
+Git log:
+Git log command shows the log of commits that entered the master branch.
+By the way, git help log shows the list of options that are available for the log command and also the usage.
+By git log, you can search as specific commit by mentioning its commit number.
+By --since flag, you can actually mention a date range.
+You can also specifically check for changes/ commits applied to a specific file.
+For ex:
+git logg -- GIT\ Notes.txt
+Shows all the commmits that involved 'GIT Notes.txt'.
+Here by mentioning -- you are seperating them from other options and also implying that check in that following path as
+of how files in the first place came into git tracking.
+Or you can use --follow flag to check beyond the file renames or file creations, that is to check the changes involved beyond
+renames to file existing in a particular path.
+ex: 
+git log --follow \level\level2\level2.txt
+This follow command only works for single file.
+
+To show a one line for each commit hostory, you can type in
+git log --all --oneline --decorate --graph
+
+You can alias the above big command by the following
+git config --global alias.hist "log --all --graph --decorate --oneline"
+
+WE mentioned --global flag to make this alias command work regardless of the repository.
+Any config that starts with alias. is recognised as an alias command.
+This is stored in the .gitconfig file.
+now to run the alias command, just type
+git hist. and you are done.
+
+GIT IGNORE:
+we can ignore specific files, so that GIT just ignores them and doesnt bug us that there exists some files that are not being tracked.
+To do so, we have to create a .gitignore file, 
+the rules to enter in this .gitignore file are one expression per line.
+There are 3 general expressions:
+specific file: just mention the full file name,
+File pattern: *.txt etc..
+Folder: my-folder/
+
+
+
+
 
