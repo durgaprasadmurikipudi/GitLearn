@@ -177,6 +177,30 @@ specific file: just mention the full file name,
 File pattern: *.txt etc..
 Folder: my-folder/
 
+Git Diffing:
+Git diff tool shows you the differences between working area vs staging area vs HEAD(Commited region).
+git diff : simply compares between working area and staged area
+git diff HEAD : compares between working area and HEAD
+git diff --staged HEAD: compares between staged vs HEAD.
+
+if you use diff tool, left side is always the highest area of commit.
+so if working vs staged, then staged is in the left side
+and if staged vs HEA, HEAD will be in the left side of comaprision.
+
+You can always limit comaprision to one file by
+git diff -- README.md 
+
+Diffing between commits,
+git diff HEAD HEAD^: compares between last commit and last commit - 1.
+git diff <some_random_commit_no#> HEAD:
+compares between last commit and the random commit mentioned.
+git diff <Random_commit1> <random_commit2>
+comapres between 2 different commits.
+
+To comapre between remote and local ?
+git diff master origin/master.
+
+
 
 
 
