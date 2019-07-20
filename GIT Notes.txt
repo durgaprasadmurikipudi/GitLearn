@@ -197,8 +197,50 @@ compares between last commit and the random commit mentioned.
 git diff <Random_commit1> <random_commit2>
 comapres between 2 different commits.
 
-To comapre between remote and local ?
+To compare between remote and local ?
 git diff master origin/master.
+
+Branching:
+==========
+git branch -a : lists all the branches present, including remote branch names.
+git branch: just lists the local branches present.
+An * mark will be present on the current branch.
+
+If you type git branch mynewbranch,
+a branch called 'mynewbranch' will be created on the current repository we sit on.
+we can rename it by syntax git branch -m mynewbranch newbranch
+and it will be renamed.
+To switch to a new branch, we need to check it out.
+git checkout newbranch, will shift us to that 'newbranch' branch.
+
+If we see the commit history a this point, for when a branch is created, a new commit point is added.
+In this commit point, it will list: HEAD, origin/HEAD, origina/master, newbranch, master.
+Why does it list? it is essentially saying that all the above names point to the most recent commit and that are all in sync.
+To delete a branch,
+git branch -d '<branch-name>'
+For obvious reasons you cant delete a branch, that you current are on, you have to switch to a different branch.
+
+git checkout -b '<branch-name', will create a new branch on the current residing branch and also shifts your working tree to
+point that newly created branch.
+
+now if we made any change in feature branch, and now we want it to merge it to master,
+first we switch to master branch by git checkout master
+and then git merge <'whatever-the-branch-you-want-to-commit-name>".
+
+Git says the type of merge after the merge, if there are no conflicts.
+If it says its a fast forward merge, then essentially it means that there are no commits present in the master branch,
+after you have created the branch, so esentially the commits present in merging branch are treated as if they have directly
+made on the master branch.
+So just putting the branch ahead of master branch or like that..
+It also lists which commti fro master and the commit from brnach are being merged.
+
+Its always a good practice to git diff master '<merging-branch-name>' to see the differences made in the branch before merging.
+Also delete the branch name after merging, you dont want it in msot of the cases.
+If you see the git log --oneline --graph,
+now you will see that HEAD, master are pointing to the latest commit, and just below them remote brnach names will be listed,
+essentially saying that local is ahead of remote by one commit.
+
+
 
 
 
