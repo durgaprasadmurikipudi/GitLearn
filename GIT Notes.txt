@@ -246,7 +246,7 @@ now.. you can merge branch and master, if you are sure there will be no conflict
 Next.. git log -oneline --graph --decorate --all will give you in a beautful way how the branches were created and merged,
 do not forget to delete the branch if not needed and laso checking out to master before merging.
 
-This scenario is called automatic merge hahaha.
+This scenario is called automatic merge.
 
 
 
