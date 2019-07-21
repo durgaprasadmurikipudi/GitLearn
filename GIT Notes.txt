@@ -240,6 +240,15 @@ If you see the git log --oneline --graph,
 now you will see that HEAD, master are pointing to the latest commit, and just below them remote brnach names will be listed,
 essentially saying that local is ahead of remote by one commit.
 
+So if you create a branch from amster and made commits to it, and made some changes to master also, made a commti there,
+now.. you can merge branch and master, if you are sure there will be no conflicts. It will merge without a complaint.
+
+Next.. git log -oneline --graph --decorate --all will give you in a beautful way how the branches were created and merged,
+do not forget to delete the branch if not needed and laso checking out to master before merging.
+
+This scenario is called automatic merge hahaha.
+
+
 
 
 
