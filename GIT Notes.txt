@@ -248,7 +248,9 @@ do not forget to delete the branch if not needed and laso checking out to master
 
 This scenario is called automatic merge.
 
-
+If you have conflicts, then you got to keep the lines that you want to save and commit them.
+Then merge again.
+You got to save both files as required and then you got to merge.
 
 
 
