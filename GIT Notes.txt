@@ -252,6 +252,44 @@ If you have conflicts, then you got to keep the lines that you want to save and 
 Then merge again.
 You got to save both files as required and then you got to merge.
 
+"Rebasing":
+===========
+Now you have crated a branch and commited some changes into it.
+Also, you have made some changes into master branch.. and commited them.
+
+Now rebase means, you will incorporate all changes to feature branch from master rbanch.
+What it does is.. first rewinds all changes made to feature branch, applies all changes made to master branch.
+Applies changes of feature branch now on feature branch, this is replaying..
+Now rebase is complete.
+
+Now it looks like the feauture branch only has the all changes and looks like all the changes made in master are already 
+done before ever when the feature branch has been created.
+If you have any conflicts while rebasing, you can abort the entire rebasing via git rebase --abort
+
+If you actually resolve the conflicts, and you want to continue rebasing.. 
+git rebase -- continue.
+
+So what happens to this conflicts merge ?
+Whatever the conflicts you have resovled will all be incorporated as changes to feature branch, all the changes that are all 
+alone and belong to master branch, stay in master.
+So after rebase --continue,
+all the unconflicted changes in master will be as a commit in master and all the conflicitng changes and all the non conflicting 
+changes belonging to feature branch will be present in the feature branch.
+
+You can later merge this branches and it will be a simple fast forward merge.
+
+REbase: remote:
+===============
+What if you have changes in origin or remote branch and also in your local master branch and you want to rebase that changes
+in the local master branch ?
+First do a git status 
+, it will say master is ahead by one commit,
+now do git fetch origin master, now it will non disruptively bring all the commits present in origin.
+Now if we say git status, it will say origin and master are both diverged each with one commit respectively.
+Now do a git pull --rebase origin master.
+Thats all you rebased origin with master.
+If you do simple pull, it will be a automatic merge operation.
+
 
 
 
