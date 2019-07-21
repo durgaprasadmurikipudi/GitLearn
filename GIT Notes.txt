@@ -290,6 +290,39 @@ Now do a git pull --rebase origin master.
 Thats all you rebased origin with master.
 If you do simple pull, it will be a automatic merge operation.
 
+Stashing:
+=========
+You have made some changes to the working directory, now you want to urgently work on a production fix in the same branch,
+you cant commit these chanegs to the staged area or commit region.
+You can do then git stash save or / by default git uses save, so git stash
+THen all this work will be saved into a stash save point. And all the changes in the working area will be removed,
+it will be clean as if there are no changes.
+
+Now work on prod fix and push them to master and origin branch.
+Now git stash apply, it will apply the last stash point saved.
+Git stash is like a stack.
+so all the stashed save poitns will be saved in stack.
+you can see the list by git stash list and also pop or delete the last one by git stash drop.
+
+you can simply do both git stash apply and git stash drop by command
+git stash pop.
+Also, git stash save by default only changes to tracked files.
+If you also want to include untracked files, git staash -u is the command.
+
+Managing multiple stashes:
+==========================
+
+If you do multiple stashes,
+git stash list: lists them all.
+git stash show stash@{index-number}: lists the difference between head commit and stash at that mentioned index number.
+git stash apply stash@{index-number}: Applies that changes present in mentioned stash index number.
+git stash clear: clears all the stashed
+
+Als you can apply all the changes present in the latest stash by command
+git stash branch <branch-name>
+also after applying the changes to the branch, that latest stash will be deleted as well.
+
+
 
 
 
