@@ -382,3 +382,4 @@ tell git that current repository to be reset to that commit, you will actually m
 Thus way, we can actually move forward and backaward in commit history. Ain't it nice .. ?
 
 3
+4
