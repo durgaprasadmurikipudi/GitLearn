@@ -326,7 +326,49 @@ The git commit --amend command is a convenient way to modify the most recent com
  It lets you combine staged changes with the previous commit instead of creating an entirely new commit. 
  It can also be used to simply edit the previous commit message without changing its snapshot.
 
+GIT Tagging:
+List of commands and their explanations:
+To create a tag in GIT:
+git tag myTag
+To show the list of tags present:
+git tag --list
+To show the description of a specific tag: mentions the commit details, author ..etc:
+git show myTag
+To delete the tag:
+git tag --delete myTag
 
+Annotated Tags
+Annotated tags are tags with more information, like comments, associated with them.
+To create an annotated tag: you mention the -a flag
+git tag -a v-1.0
+When you ask to show an annotated tag, you also now see the annotated notes along with other details associated.
+Comparing Tags:
+Tags mark important milestones in a project, so they are great way to compare what has happened between those milestones.
+
+git tag -a v-1.1
+
+git tag v-1.2 -m "Release 1.2", here you are directly adding the message to be associated with this tag.
+git tag --list
+git log --oneline --decorate --graph --all
+git diff v-1.0 v-1.2, this is how you comapre two different tags.
+git difftool v-1.0 v-1.2
+You can also add a tag to a alrady committed one , by just mentioning the commit number.
+If you dont mention a commit number, it will by default associate itself with the commit pointed by head or latest commit.
+Updating a Tag
+Sometimes mistakes happen and you'll need to update a tag.
+
+git tag -a v-0.8-alpha -f bd35d46, this will update the tag already created, -f flag is what enables update.
+Remote Tagging (GitHub):
+Working with remote tags on GitHub.
+Command Listing
+
+git push origin v-0.9-beta, you can put an individual tag, and the commits till then will be directly pushed to github.
+git push origin v-1.1
+clear
+git push origin master --tags, you can actually push the tags created in master, after the commits have pushed to remote origin
+by the above command, this will specifically sync the tags created in master branch with remote branch.
+To delete a tag finally :
+git push origin :v-0.8-alpha
 
 
 
