@@ -384,3 +384,4 @@ Thus way, we can actually move forward and backaward in commit history. Ain't it
 3
 4
 5
+6
