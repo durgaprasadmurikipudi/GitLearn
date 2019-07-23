@@ -381,4 +381,4 @@ even a reset is also like a commit point in git, so if you copy the commit code 
 tell git that current repository to be reset to that commit, you will actually move forward to that commit point.
 Thus way, we can actually move forward and backaward in commit history. Ain't it nice .. ?
 
-1
+12
