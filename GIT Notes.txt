@@ -381,3 +381,19 @@ even a reset is also like a commit point in git, so if you copy the commit code 
 tell git that current repository to be reset to that commit, you will actually move forward to that commit point.
 Thus way, we can actually move forward and backaward in commit history. Ain't it nice .. ?
 
+Some tips:
+to diff between remote branch and local branch, you can actually create a local branch to track remote branch and then 
+diff it with target local branch.
+
+git branch <reference-to-remote-branch-name> <remote-branch-that-you-want-to-track>
+now a local branch with reference-remote-branch-name name will be created, you can do git pull and it will have latest commit
+details, now do git diff reference-remote-branch-name master to comapre changes between local nand remote branch.
+
+Git stash vs branch:
+now you did some changes in master branch later you just want to move this changes to a new branch,
+you can git stash it.
+create a new branch, check out it,
+now git stash pop to apply those stashed changes. Now you figure out the use cases.
+Also, some git version lets you checkout to different branches,even when working directory is not clean,
+but if you want to checkout to new branch, and also do not want to stage changes in the current working directory or branch,
+you can simply stash it.
